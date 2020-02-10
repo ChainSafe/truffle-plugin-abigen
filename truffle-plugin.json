@@ -1,0 +1,5 @@
+{
+    "commands": {
+        "abigen": "index.js"
+    }
+}
