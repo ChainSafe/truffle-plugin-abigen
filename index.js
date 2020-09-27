@@ -21,10 +21,27 @@ module.exports = async (config) => {
         contracts = await getAllArtifacts(options);
     } else {
         for (const contractName of options.contracts) {
-            contracts.push(getArtifact(contractName, options));
+            const c = getArtifact(contractName, options);
+            const importedContracts = parseImports(options, c);
+            contracts.push(c);
+            importedContracts.forEach(x => contracts.push(x));
         }
     }
     contracts.forEach(contract => writeAbigen(contract.contractName, contract.abi, contract.bytecode));
+}
+
+const parseImports = (options, blob) => {
+    split = blob.source.split(";")
+    let imports = [];
+    split.forEach(line => {
+        if(line.indexOf("import") > -1) {
+            let path = line.split("import")[1].replace(/['"]+/g, '').replace(" ","");
+            let split = path.split("/");
+            let name = split[split.length - 1].replace(".sol", "");
+            imports.push(getArtifact(name, options));
+        }
+    })
+    return imports
 }
 
 const parseConfig = (config) => {
@@ -48,7 +65,7 @@ const parseConfig = (config) => {
 
 const getArtifact = (contractName, options) => {
     // Construct artifact path and read artifact
-    const artifactPath = `${options.contractsBuildDir}/${contractName}.json`
+    let artifactPath = `${options.contractsBuildDir}/${contractName}.json`
     logger.debug(`Reading artifact file at ${artifactPath}`)
     enforceOrThrow(fs.existsSync(artifactPath), `Could not find ${contractName} artifact at ${artifactPath}`)
     // Stringify + parse to make a deep copy (to avoid bugs with PR #19)
@@ -58,10 +75,11 @@ const getArtifact = (contractName, options) => {
 const getAllArtifacts = async (options) => {
     let files = fs.readdirSync("./build/contracts");
     const content = [];
+    logger.info("here")
     files.forEach(file => {
         const contractName = file.split(".")[0];
         const artifact = getArtifact(contractName, options);
-
+        logger.info(artifact)
         if (artifact.abi.length !== 0) {
             content.push(artifact);
         }
