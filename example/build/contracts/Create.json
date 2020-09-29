@@ -1,0 +1,304 @@
+{
+  "contractName": "Create",
+  "abi": [
+    {
+      "constant": true,
+      "inputs": [],
+      "name": "owner",
+      "outputs": [
+        {
+          "internalType": "address",
+          "name": "",
+          "type": "address"
+        }
+      ],
+      "payable": false,
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "constant": false,
+      "inputs": [],
+      "name": "test_invalid",
+      "outputs": [],
+      "payable": false,
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "constant": false,
+      "inputs": [],
+      "name": "test_revert",
+      "outputs": [],
+      "payable": false,
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "constant": false,
+      "inputs": [],
+      "name": "test_stop",
+      "outputs": [],
+      "payable": false,
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "constant": false,
+      "inputs": [],
+      "name": "testOpcodes",
+      "outputs": [],
+      "payable": false,
+      "stateMutability": "nonpayable",
+      "type": "function"
+    }
+  ],
+  "metadata": "{\"compiler\":{\"version\":\"0.5.16+commit.9c3226ce\"},\"language\":\"Solidity\",\"output\":{\"abi\":[{\"constant\":true,\"inputs\":[],\"name\":\"owner\",\"outputs\":[{\"internalType\":\"address\",\"name\":\"\",\"type\":\"address\"}],\"payable\":false,\"stateMutability\":\"view\",\"type\":\"function\"},{\"constant\":false,\"inputs\":[],\"name\":\"testOpcodes\",\"outputs\":[],\"payable\":false,\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"constant\":false,\"inputs\":[],\"name\":\"test_invalid\",\"outputs\":[],\"payable\":false,\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"constant\":false,\"inputs\":[],\"name\":\"test_revert\",\"outputs\":[],\"payable\":false,\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"constant\":false,\"inputs\":[],\"name\":\"test_stop\",\"outputs\":[],\"payable\":false,\"stateMutability\":\"nonpayable\",\"type\":\"function\"}],\"devdoc\":{\"methods\":{}},\"userdoc\":{\"methods\":{}}},\"settings\":{\"compilationTarget\":{\"/home/greg/code/github.com/ChainSafe/truffle-plugin-abigen/example/contracts/create.sol\":\"Create\"},\"evmVersion\":\"istanbul\",\"libraries\":{},\"optimizer\":{\"enabled\":false,\"runs\":200},\"remappings\":[]},\"sources\":{\"/home/greg/code/github.com/ChainSafe/truffle-plugin-abigen/example/contracts/Abstracts/TestContractInterface.sol\":{\"keccak256\":\"0x2a83f99436ca7b4e546b078430361c5735fd431b9903a395b5eb5e4903f4f586\",\"urls\":[\"bzz-raw://9bb80a4bc39e1c0508485bd39666fb3a9c97b7bad99b3b056faf1fef8d562dd4\",\"dweb:/ipfs/Qmb3EMbftSbK5Gop66GHUuhwkDMP4mBn21DaohFbLq1hzk\"]},\"/home/greg/code/github.com/ChainSafe/truffle-plugin-abigen/example/contracts/create.sol\":{\"keccak256\":\"0xa5330bfa8cdb698b3f6d88e9e904d7c09828df4e41625e52b883d70a2b63eb59\",\"urls\":[\"bzz-raw://ff7482b147eaa38b4a3d8e6276a77d96639e3676e357023fc1df4ecce21c5d49\",\"dweb:/ipfs/QmZYFHyKC7m5wo7rqV76dXvdQ7WyiGswdLmHKnoTqQEFjB\"]}},\"version\":1}",
+  "bytecode": "0x6080604052336000806101000a81548173ffffffffffffffffffffffffffffffffffffffff021916908373ffffffffffffffffffffffffffffffffffffffff16021790555061012b806100536000396000f3fe6080604052348015600f57600080fd5b506004361060505760003560e01c8063391521f414605557806355313dea14605d5780636d3d14161460655780638da5cb5b14606d578063b9d1e5aa1460b5575b600080fd5b605b60bd565b005b606360c8565b005b606b60ca565b005b607360cf565b604051808273ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200191505060405180910390f35b60bb60f4565b005b6020610123600af050565b005b600080fd5b6000809054906101000a900473ffffffffffffffffffffffffffffffffffffffff1681565bfefea265627a7a7231582061c95c40d9b1f23943177e2049291d42b93fc367d77a045af0e6bb983fe981f864736f6c63430005100032",
+  "deployedBytecode": "0x6080604052348015600f57600080fd5b506004361060505760003560e01c8063391521f414605557806355313dea14605d5780636d3d14161460655780638da5cb5b14606d578063b9d1e5aa1460b5575b600080fd5b605b60bd565b005b606360c8565b005b606b60ca565b005b607360cf565b604051808273ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200191505060405180910390f35b60bb60f4565b005b6020610123600af050565b005b600080fd5b6000809054906101000a900473ffffffffffffffffffffffffffffffffffffffff1681565bfefea265627a7a7231582061c95c40d9b1f23943177e2049291d42b93fc367d77a045af0e6bb983fe981f864736f6c63430005100032",
+  "sourceMap": "74:130:9:-;;;123:10:1;115:5;;:18;;;;;;;;;;;;;;;;;;74:130:9;;;;;;",
+  "deployedSourceMap": "74:130:9:-;;;;8:9:-1;5:2;;;30:1;27;20:12;5:2;74:130:9;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;121:81;;;:::i;:::-;;455:50:1;;;:::i;:::-;;333:58;;;:::i;:::-;;61:20;;;:::i;:::-;;;;;;;;;;;;;;;;;;;;;;;395:56;;;:::i;:::-;;121:81:9;191:2;184:5;180:2;173:21;169:26;167:30::o;455:50:1:-;495:6;333:58;385:1;382;375:12;61:20;;;;;;;;;;;;;:::o;395:56::-;438:9",
+  "source": "pragma solidity <0.6.0;\n\nimport \"./Abstracts/TestContractInterface.sol\";\n\ncontract Create is TestContractInterface {\n\n\n  function testOpcodes() public {\n\n    assembly { pop(create(10, 0x123, 32)) }\n\n  }\n}",
+  "sourcePath": "/home/greg/code/github.com/ChainSafe/truffle-plugin-abigen/example/contracts/create.sol",
+  "ast": {
+    "absolutePath": "/home/greg/code/github.com/ChainSafe/truffle-plugin-abigen/example/contracts/create.sol",
+    "exportedSymbols": {
+      "Create": [
+        271
+      ]
+    },
+    "id": 272,
+    "nodeType": "SourceUnit",
+    "nodes": [
+      {
+        "id": 262,
+        "literals": [
+          "solidity",
+          "<",
+          "0.6",
+          ".0"
+        ],
+        "nodeType": "PragmaDirective",
+        "src": "0:23:9"
+      },
+      {
+        "absolutePath": "/home/greg/code/github.com/ChainSafe/truffle-plugin-abigen/example/contracts/Abstracts/TestContractInterface.sol",
+        "file": "./Abstracts/TestContractInterface.sol",
+        "id": 263,
+        "nodeType": "ImportDirective",
+        "scope": 272,
+        "sourceUnit": 66,
+        "src": "25:47:9",
+        "symbolAliases": [],
+        "unitAlias": ""
+      },
+      {
+        "baseContracts": [
+          {
+            "arguments": null,
+            "baseName": {
+              "contractScope": null,
+              "id": 264,
+              "name": "TestContractInterface",
+              "nodeType": "UserDefinedTypeName",
+              "referencedDeclaration": 65,
+              "src": "93:21:9",
+              "typeDescriptions": {
+                "typeIdentifier": "t_contract$_TestContractInterface_$65",
+                "typeString": "contract TestContractInterface"
+              }
+            },
+            "id": 265,
+            "nodeType": "InheritanceSpecifier",
+            "src": "93:21:9"
+          }
+        ],
+        "contractDependencies": [
+          65
+        ],
+        "contractKind": "contract",
+        "documentation": null,
+        "fullyImplemented": true,
+        "id": 271,
+        "linearizedBaseContracts": [
+          271,
+          65
+        ],
+        "name": "Create",
+        "nodeType": "ContractDefinition",
+        "nodes": [
+          {
+            "body": {
+              "id": 269,
+              "nodeType": "Block",
+              "src": "151:51:9",
+              "statements": [
+                {
+                  "externalReferences": [],
+                  "id": 268,
+                  "nodeType": "InlineAssembly",
+                  "operations": "{ pop(create(10, 0x123, 32)) }",
+                  "src": "158:39:9"
+                }
+              ]
+            },
+            "documentation": null,
+            "id": 270,
+            "implemented": true,
+            "kind": "function",
+            "modifiers": [],
+            "name": "testOpcodes",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 266,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "141:2:9"
+            },
+            "returnParameters": {
+              "id": 267,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "151:0:9"
+            },
+            "scope": 271,
+            "src": "121:81:9",
+            "stateMutability": "nonpayable",
+            "superFunction": 49,
+            "visibility": "public"
+          }
+        ],
+        "scope": 272,
+        "src": "74:130:9"
+      }
+    ],
+    "src": "0:204:9"
+  },
+  "legacyAST": {
+    "absolutePath": "/home/greg/code/github.com/ChainSafe/truffle-plugin-abigen/example/contracts/create.sol",
+    "exportedSymbols": {
+      "Create": [
+        271
+      ]
+    },
+    "id": 272,
+    "nodeType": "SourceUnit",
+    "nodes": [
+      {
+        "id": 262,
+        "literals": [
+          "solidity",
+          "<",
+          "0.6",
+          ".0"
+        ],
+        "nodeType": "PragmaDirective",
+        "src": "0:23:9"
+      },
+      {
+        "absolutePath": "/home/greg/code/github.com/ChainSafe/truffle-plugin-abigen/example/contracts/Abstracts/TestContractInterface.sol",
+        "file": "./Abstracts/TestContractInterface.sol",
+        "id": 263,
+        "nodeType": "ImportDirective",
+        "scope": 272,
+        "sourceUnit": 66,
+        "src": "25:47:9",
+        "symbolAliases": [],
+        "unitAlias": ""
+      },
+      {
+        "baseContracts": [
+          {
+            "arguments": null,
+            "baseName": {
+              "contractScope": null,
+              "id": 264,
+              "name": "TestContractInterface",
+              "nodeType": "UserDefinedTypeName",
+              "referencedDeclaration": 65,
+              "src": "93:21:9",
+              "typeDescriptions": {
+                "typeIdentifier": "t_contract$_TestContractInterface_$65",
+                "typeString": "contract TestContractInterface"
+              }
+            },
+            "id": 265,
+            "nodeType": "InheritanceSpecifier",
+            "src": "93:21:9"
+          }
+        ],
+        "contractDependencies": [
+          65
+        ],
+        "contractKind": "contract",
+        "documentation": null,
+        "fullyImplemented": true,
+        "id": 271,
+        "linearizedBaseContracts": [
+          271,
+          65
+        ],
+        "name": "Create",
+        "nodeType": "ContractDefinition",
+        "nodes": [
+          {
+            "body": {
+              "id": 269,
+              "nodeType": "Block",
+              "src": "151:51:9",
+              "statements": [
+                {
+                  "externalReferences": [],
+                  "id": 268,
+                  "nodeType": "InlineAssembly",
+                  "operations": "{ pop(create(10, 0x123, 32)) }",
+                  "src": "158:39:9"
+                }
+              ]
+            },
+            "documentation": null,
+            "id": 270,
+            "implemented": true,
+            "kind": "function",
+            "modifiers": [],
+            "name": "testOpcodes",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 266,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "141:2:9"
+            },
+            "returnParameters": {
+              "id": 267,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "151:0:9"
+            },
+            "scope": 271,
+            "src": "121:81:9",
+            "stateMutability": "nonpayable",
+            "superFunction": 49,
+            "visibility": "public"
+          }
+        ],
+        "scope": 272,
+        "src": "74:130:9"
+      }
+    ],
+    "src": "0:204:9"
+  },
+  "compiler": {
+    "name": "solc",
+    "version": "0.5.16+commit.9c3226ce.Emscripten.clang"
+  },
+  "networks": {},
+  "schemaVersion": "3.0.23",
+  "updatedAt": "2020-09-27T17:19:46.971Z",
+  "devdoc": {
+    "methods": {}
+  },
+  "userdoc": {
+    "methods": {}
+  }
+}

@@ -1,0 +1,346 @@
+{
+  "contractName": "BooleanOperators",
+  "abi": [
+    {
+      "constant": true,
+      "inputs": [],
+      "name": "owner",
+      "outputs": [
+        {
+          "internalType": "address",
+          "name": "",
+          "type": "address"
+        }
+      ],
+      "payable": false,
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "constant": false,
+      "inputs": [],
+      "name": "test_invalid",
+      "outputs": [],
+      "payable": false,
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "constant": false,
+      "inputs": [],
+      "name": "test_revert",
+      "outputs": [],
+      "payable": false,
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "constant": false,
+      "inputs": [],
+      "name": "test_stop",
+      "outputs": [],
+      "payable": false,
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "constant": false,
+      "inputs": [],
+      "name": "testOpcodes",
+      "outputs": [],
+      "payable": false,
+      "stateMutability": "nonpayable",
+      "type": "function"
+    }
+  ],
+  "metadata": "{\"compiler\":{\"version\":\"0.5.16+commit.9c3226ce\"},\"language\":\"Solidity\",\"output\":{\"abi\":[{\"constant\":true,\"inputs\":[],\"name\":\"owner\",\"outputs\":[{\"internalType\":\"address\",\"name\":\"\",\"type\":\"address\"}],\"payable\":false,\"stateMutability\":\"view\",\"type\":\"function\"},{\"constant\":false,\"inputs\":[],\"name\":\"testOpcodes\",\"outputs\":[],\"payable\":false,\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"constant\":false,\"inputs\":[],\"name\":\"test_invalid\",\"outputs\":[],\"payable\":false,\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"constant\":false,\"inputs\":[],\"name\":\"test_revert\",\"outputs\":[],\"payable\":false,\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"constant\":false,\"inputs\":[],\"name\":\"test_stop\",\"outputs\":[],\"payable\":false,\"stateMutability\":\"nonpayable\",\"type\":\"function\"}],\"devdoc\":{\"methods\":{}},\"userdoc\":{\"methods\":{}}},\"settings\":{\"compilationTarget\":{\"/home/greg/code/github.com/ChainSafe/truffle-plugin-abigen/example/contracts/booleanOperators.sol\":\"BooleanOperators\"},\"evmVersion\":\"istanbul\",\"libraries\":{},\"optimizer\":{\"enabled\":false,\"runs\":200},\"remappings\":[]},\"sources\":{\"/home/greg/code/github.com/ChainSafe/truffle-plugin-abigen/example/contracts/Abstracts/TestContractInterface.sol\":{\"keccak256\":\"0x2a83f99436ca7b4e546b078430361c5735fd431b9903a395b5eb5e4903f4f586\",\"urls\":[\"bzz-raw://9bb80a4bc39e1c0508485bd39666fb3a9c97b7bad99b3b056faf1fef8d562dd4\",\"dweb:/ipfs/Qmb3EMbftSbK5Gop66GHUuhwkDMP4mBn21DaohFbLq1hzk\"]},\"/home/greg/code/github.com/ChainSafe/truffle-plugin-abigen/example/contracts/booleanOperators.sol\":{\"keccak256\":\"0x2e22224c4e1191bc1a26b8df52d1c699201a25f8f096f1d6fb127f75c273ce6d\",\"urls\":[\"bzz-raw://e67cfab662a2791611a2dd806d115468f8ab932532f209cbe58c77e16800e010\",\"dweb:/ipfs/Qmaq2qmssLpV88kAvaLo3pS95u4TW2YbFRxnTDtNAb4QSs\"]}},\"version\":1}",
+  "bytecode": "0x6080604052336000806101000a81548173ffffffffffffffffffffffffffffffffffffffff021916908373ffffffffffffffffffffffffffffffffffffffff160217905550610122806100536000396000f3fe6080604052348015600f57600080fd5b506004361060505760003560e01c8063391521f414605557806355313dea14605d5780636d3d14161460655780638da5cb5b14606d578063b9d1e5aa1460b5575b600080fd5b605b60bd565b005b606360bf565b005b606b60c1565b005b607360c6565b604051808273ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200191505060405180910390f35b60bb60eb565b005b565b005b600080fd5b6000809054906101000a900473ffffffffffffffffffffffffffffffffffffffff1681565bfefea265627a7a72315820b79bdac0122be0bc238a12306ff2484483de715008055bf00d2535c88ddeebc464736f6c63430005100032",
+  "deployedBytecode": "0x6080604052348015600f57600080fd5b506004361060505760003560e01c8063391521f414605557806355313dea14605d5780636d3d14161460655780638da5cb5b14606d578063b9d1e5aa1460b5575b600080fd5b605b60bd565b005b606360bf565b005b606b60c1565b005b607360c6565b604051808273ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200191505060405180910390f35b60bb60eb565b005b565b005b600080fd5b6000809054906101000a900473ffffffffffffffffffffffffffffffffffffffff1681565bfefea265627a7a72315820b79bdac0122be0bc238a12306ff2484483de715008055bf00d2535c88ddeebc464736f6c63430005100032",
+  "sourceMap": "74:271:5:-;;;123:10:1;115:5;;:18;;;;;;;;;;;;;;;;;;74:271:5;;;;;;",
+  "deployedSourceMap": "74:271:5:-;;;;8:9:-1;5:2;;;30:1;27;20:12;5:2;74:271:5;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;130:212;;;:::i;:::-;;455:50:1;;;:::i;:::-;;333:58;;;:::i;:::-;;61:20;;;:::i;:::-;;;;;;;;;;;;;;;;;;;;;;;395:56;;;:::i;:::-;;130:212:5;320:17::o;455:50:1:-;495:6;333:58;385:1;382;375:12;61:20;;;;;;;;;;;;;:::o;395:56::-;438:9",
+  "source": "pragma solidity <0.6.0;\n\nimport \"./Abstracts/TestContractInterface.sol\";\n\ncontract BooleanOperators is TestContractInterface {\n\n  function testOpcodes() public {\n\n     //not\n     assembly { pop( not(0x1f)) }\n\n     //and\n     assembly { pop(and(2,3)) }\n\n     //or\n     assembly { pop(or(3,3)) }\n\n     //xor\n     assembly { pop(xor(3,3)) }\n\n  }\n\n}",
+  "sourcePath": "/home/greg/code/github.com/ChainSafe/truffle-plugin-abigen/example/contracts/booleanOperators.sol",
+  "ast": {
+    "absolutePath": "/home/greg/code/github.com/ChainSafe/truffle-plugin-abigen/example/contracts/booleanOperators.sol",
+    "exportedSymbols": {
+      "BooleanOperators": [
+        159
+      ]
+    },
+    "id": 160,
+    "nodeType": "SourceUnit",
+    "nodes": [
+      {
+        "id": 147,
+        "literals": [
+          "solidity",
+          "<",
+          "0.6",
+          ".0"
+        ],
+        "nodeType": "PragmaDirective",
+        "src": "0:23:5"
+      },
+      {
+        "absolutePath": "/home/greg/code/github.com/ChainSafe/truffle-plugin-abigen/example/contracts/Abstracts/TestContractInterface.sol",
+        "file": "./Abstracts/TestContractInterface.sol",
+        "id": 148,
+        "nodeType": "ImportDirective",
+        "scope": 160,
+        "sourceUnit": 66,
+        "src": "25:47:5",
+        "symbolAliases": [],
+        "unitAlias": ""
+      },
+      {
+        "baseContracts": [
+          {
+            "arguments": null,
+            "baseName": {
+              "contractScope": null,
+              "id": 149,
+              "name": "TestContractInterface",
+              "nodeType": "UserDefinedTypeName",
+              "referencedDeclaration": 65,
+              "src": "103:21:5",
+              "typeDescriptions": {
+                "typeIdentifier": "t_contract$_TestContractInterface_$65",
+                "typeString": "contract TestContractInterface"
+              }
+            },
+            "id": 150,
+            "nodeType": "InheritanceSpecifier",
+            "src": "103:21:5"
+          }
+        ],
+        "contractDependencies": [
+          65
+        ],
+        "contractKind": "contract",
+        "documentation": null,
+        "fullyImplemented": true,
+        "id": 159,
+        "linearizedBaseContracts": [
+          159,
+          65
+        ],
+        "name": "BooleanOperators",
+        "nodeType": "ContractDefinition",
+        "nodes": [
+          {
+            "body": {
+              "id": 157,
+              "nodeType": "Block",
+              "src": "160:182:5",
+              "statements": [
+                {
+                  "externalReferences": [],
+                  "id": 153,
+                  "nodeType": "InlineAssembly",
+                  "operations": "{ pop(not(0x1f)) }",
+                  "src": "179:28:5"
+                },
+                {
+                  "externalReferences": [],
+                  "id": 154,
+                  "nodeType": "InlineAssembly",
+                  "operations": "{ pop(and(2, 3)) }",
+                  "src": "225:26:5"
+                },
+                {
+                  "externalReferences": [],
+                  "id": 155,
+                  "nodeType": "InlineAssembly",
+                  "operations": "{ pop(or(3, 3)) }",
+                  "src": "268:25:5"
+                },
+                {
+                  "externalReferences": [],
+                  "id": 156,
+                  "nodeType": "InlineAssembly",
+                  "operations": "{ pop(xor(3, 3)) }",
+                  "src": "311:26:5"
+                }
+              ]
+            },
+            "documentation": null,
+            "id": 158,
+            "implemented": true,
+            "kind": "function",
+            "modifiers": [],
+            "name": "testOpcodes",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 151,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "150:2:5"
+            },
+            "returnParameters": {
+              "id": 152,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "160:0:5"
+            },
+            "scope": 159,
+            "src": "130:212:5",
+            "stateMutability": "nonpayable",
+            "superFunction": 49,
+            "visibility": "public"
+          }
+        ],
+        "scope": 160,
+        "src": "74:271:5"
+      }
+    ],
+    "src": "0:345:5"
+  },
+  "legacyAST": {
+    "absolutePath": "/home/greg/code/github.com/ChainSafe/truffle-plugin-abigen/example/contracts/booleanOperators.sol",
+    "exportedSymbols": {
+      "BooleanOperators": [
+        159
+      ]
+    },
+    "id": 160,
+    "nodeType": "SourceUnit",
+    "nodes": [
+      {
+        "id": 147,
+        "literals": [
+          "solidity",
+          "<",
+          "0.6",
+          ".0"
+        ],
+        "nodeType": "PragmaDirective",
+        "src": "0:23:5"
+      },
+      {
+        "absolutePath": "/home/greg/code/github.com/ChainSafe/truffle-plugin-abigen/example/contracts/Abstracts/TestContractInterface.sol",
+        "file": "./Abstracts/TestContractInterface.sol",
+        "id": 148,
+        "nodeType": "ImportDirective",
+        "scope": 160,
+        "sourceUnit": 66,
+        "src": "25:47:5",
+        "symbolAliases": [],
+        "unitAlias": ""
+      },
+      {
+        "baseContracts": [
+          {
+            "arguments": null,
+            "baseName": {
+              "contractScope": null,
+              "id": 149,
+              "name": "TestContractInterface",
+              "nodeType": "UserDefinedTypeName",
+              "referencedDeclaration": 65,
+              "src": "103:21:5",
+              "typeDescriptions": {
+                "typeIdentifier": "t_contract$_TestContractInterface_$65",
+                "typeString": "contract TestContractInterface"
+              }
+            },
+            "id": 150,
+            "nodeType": "InheritanceSpecifier",
+            "src": "103:21:5"
+          }
+        ],
+        "contractDependencies": [
+          65
+        ],
+        "contractKind": "contract",
+        "documentation": null,
+        "fullyImplemented": true,
+        "id": 159,
+        "linearizedBaseContracts": [
+          159,
+          65
+        ],
+        "name": "BooleanOperators",
+        "nodeType": "ContractDefinition",
+        "nodes": [
+          {
+            "body": {
+              "id": 157,
+              "nodeType": "Block",
+              "src": "160:182:5",
+              "statements": [
+                {
+                  "externalReferences": [],
+                  "id": 153,
+                  "nodeType": "InlineAssembly",
+                  "operations": "{ pop(not(0x1f)) }",
+                  "src": "179:28:5"
+                },
+                {
+                  "externalReferences": [],
+                  "id": 154,
+                  "nodeType": "InlineAssembly",
+                  "operations": "{ pop(and(2, 3)) }",
+                  "src": "225:26:5"
+                },
+                {
+                  "externalReferences": [],
+                  "id": 155,
+                  "nodeType": "InlineAssembly",
+                  "operations": "{ pop(or(3, 3)) }",
+                  "src": "268:25:5"
+                },
+                {
+                  "externalReferences": [],
+                  "id": 156,
+                  "nodeType": "InlineAssembly",
+                  "operations": "{ pop(xor(3, 3)) }",
+                  "src": "311:26:5"
+                }
+              ]
+            },
+            "documentation": null,
+            "id": 158,
+            "implemented": true,
+            "kind": "function",
+            "modifiers": [],
+            "name": "testOpcodes",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 151,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "150:2:5"
+            },
+            "returnParameters": {
+              "id": 152,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "160:0:5"
+            },
+            "scope": 159,
+            "src": "130:212:5",
+            "stateMutability": "nonpayable",
+            "superFunction": 49,
+            "visibility": "public"
+          }
+        ],
+        "scope": 160,
+        "src": "74:271:5"
+      }
+    ],
+    "src": "0:345:5"
+  },
+  "compiler": {
+    "name": "solc",
+    "version": "0.5.16+commit.9c3226ce.Emscripten.clang"
+  },
+  "networks": {},
+  "schemaVersion": "3.0.23",
+  "updatedAt": "2020-09-27T17:19:46.970Z",
+  "devdoc": {
+    "methods": {}
+  },
+  "userdoc": {
+    "methods": {}
+  }
+}

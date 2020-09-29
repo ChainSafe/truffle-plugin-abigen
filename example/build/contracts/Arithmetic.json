@@ -1,0 +1,304 @@
+{
+  "contractName": "Arithmetic",
+  "abi": [
+    {
+      "constant": true,
+      "inputs": [],
+      "name": "owner",
+      "outputs": [
+        {
+          "internalType": "address",
+          "name": "",
+          "type": "address"
+        }
+      ],
+      "payable": false,
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "constant": false,
+      "inputs": [],
+      "name": "test_invalid",
+      "outputs": [],
+      "payable": false,
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "constant": false,
+      "inputs": [],
+      "name": "test_revert",
+      "outputs": [],
+      "payable": false,
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "constant": false,
+      "inputs": [],
+      "name": "test_stop",
+      "outputs": [],
+      "payable": false,
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "constant": false,
+      "inputs": [],
+      "name": "testOpcodes",
+      "outputs": [],
+      "payable": false,
+      "stateMutability": "nonpayable",
+      "type": "function"
+    }
+  ],
+  "metadata": "{\"compiler\":{\"version\":\"0.5.16+commit.9c3226ce\"},\"language\":\"Solidity\",\"output\":{\"abi\":[{\"constant\":true,\"inputs\":[],\"name\":\"owner\",\"outputs\":[{\"internalType\":\"address\",\"name\":\"\",\"type\":\"address\"}],\"payable\":false,\"stateMutability\":\"view\",\"type\":\"function\"},{\"constant\":false,\"inputs\":[],\"name\":\"testOpcodes\",\"outputs\":[],\"payable\":false,\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"constant\":false,\"inputs\":[],\"name\":\"test_invalid\",\"outputs\":[],\"payable\":false,\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"constant\":false,\"inputs\":[],\"name\":\"test_revert\",\"outputs\":[],\"payable\":false,\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"constant\":false,\"inputs\":[],\"name\":\"test_stop\",\"outputs\":[],\"payable\":false,\"stateMutability\":\"nonpayable\",\"type\":\"function\"}],\"devdoc\":{\"methods\":{}},\"userdoc\":{\"methods\":{}}},\"settings\":{\"compilationTarget\":{\"/home/greg/code/github.com/ChainSafe/truffle-plugin-abigen/example/contracts/arithmetic.sol\":\"Arithmetic\"},\"evmVersion\":\"istanbul\",\"libraries\":{},\"optimizer\":{\"enabled\":false,\"runs\":200},\"remappings\":[]},\"sources\":{\"/home/greg/code/github.com/ChainSafe/truffle-plugin-abigen/example/contracts/Abstracts/TestContractInterface.sol\":{\"keccak256\":\"0x2a83f99436ca7b4e546b078430361c5735fd431b9903a395b5eb5e4903f4f586\",\"urls\":[\"bzz-raw://9bb80a4bc39e1c0508485bd39666fb3a9c97b7bad99b3b056faf1fef8d562dd4\",\"dweb:/ipfs/Qmb3EMbftSbK5Gop66GHUuhwkDMP4mBn21DaohFbLq1hzk\"]},\"/home/greg/code/github.com/ChainSafe/truffle-plugin-abigen/example/contracts/arithmetic.sol\":{\"keccak256\":\"0x81d839e871206a9b92463688c6d22b16d1a537fd6de2c96d63d97b7f5acc664b\",\"urls\":[\"bzz-raw://6b98b833b8bb5e8c099c39a0b6e73c81cca6524333832b0082712cff75f383b4\",\"dweb:/ipfs/QmWrN4j6FAUH33EXf5QcMvNYTtvDLt5LQzgizdYrx71fSF\"]}},\"version\":1}",
+  "bytecode": "0x6080604052336000806101000a81548173ffffffffffffffffffffffffffffffffffffffff021916908373ffffffffffffffffffffffffffffffffffffffff160217905550610122806100536000396000f3fe6080604052348015600f57600080fd5b506004361060505760003560e01c8063391521f414605557806355313dea14605d5780636d3d14161460655780638da5cb5b14606d578063b9d1e5aa1460b5575b600080fd5b605b60bd565b005b606360bf565b005b606b60c1565b005b607360c6565b604051808273ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200191505060405180910390f35b60bb60eb565b005b565b005b600080fd5b6000809054906101000a900473ffffffffffffffffffffffffffffffffffffffff1681565bfefea265627a7a723158206b72f55dc80836fc7e08f62f53e5b8143316c2817636ee97d1342281c7fd3be964736f6c63430005100032",
+  "deployedBytecode": "0x6080604052348015600f57600080fd5b506004361060505760003560e01c8063391521f414605557806355313dea14605d5780636d3d14161460655780638da5cb5b14606d578063b9d1e5aa1460b5575b600080fd5b605b60bd565b005b606360bf565b005b606b60c1565b005b607360c6565b604051808273ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200191505060405180910390f35b60bb60eb565b005b565b005b600080fd5b6000809054906101000a900473ffffffffffffffffffffffffffffffffffffffff1681565bfefea265627a7a723158206b72f55dc80836fc7e08f62f53e5b8143316c2817636ee97d1342281c7fd3be964736f6c63430005100032",
+  "sourceMap": "203:682:3:-;;;123:10:1;115:5;;:18;;;;;;;;;;;;;;;;;;203:682:3;;;;;;",
+  "deployedSourceMap": "203:682:3:-;;;;8:9:-1;5:2;;;30:1;27;20:12;5:2;203:682:3;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;253:629;;;:::i;:::-;;455:50:1;;;:::i;:::-;;333:58;;;:::i;:::-;;61:20;;;:::i;:::-;;;;;;;;;;;;;;;;;;;;;;;395:56;;;:::i;:::-;;253:629:3;298:579::o;455:50:1:-;495:6;333:58;385:1;382;375:12;61:20;;;;;;;;;;;;;:::o;395:56::-;438:9",
+  "source": "pragma solidity <0.6.0;\n\nimport \"./Abstracts/TestContractInterface.sol\";\n\n/*\n* this contract deals with all the arithmetic opcodes that when popped off the stack\n* return either the solution, 1 ,or 0\n*/\ncontract Arithmetic is TestContractInterface {\n\n  function testOpcodes() public {\n\n    assembly{\n      //addition\n      pop(add(2,3))\n\n      //subtraction\n      pop(sub(3,1))\n\n      //multiplication\n      pop(mul(2,2))\n\n      //division\n      pop(div(4,2))\n\n      //division for signed numbers in two's complement\n      pop(sdiv(4,2))\n\n      //modulus\n      pop(mod(3,2))\n\n      //modulus for signed numbers in two's complement\n      pop(smod(3,2))\n\n      //x to the power of y\n      pop(exp(2,3))\n\n      //(x + y) % m with arbitrary precision arithmetics\n      pop(addmod(5, 3, 4))\n\n      //(x * y) % m with arbitrary precision arithmetics\n      pop(mulmod(3, 2, 4))\n\n    }\n\n  }\n\n}\n\n",
+  "sourcePath": "/home/greg/code/github.com/ChainSafe/truffle-plugin-abigen/example/contracts/arithmetic.sol",
+  "ast": {
+    "absolutePath": "/home/greg/code/github.com/ChainSafe/truffle-plugin-abigen/example/contracts/arithmetic.sol",
+    "exportedSymbols": {
+      "Arithmetic": [
+        134
+      ]
+    },
+    "id": 135,
+    "nodeType": "SourceUnit",
+    "nodes": [
+      {
+        "id": 125,
+        "literals": [
+          "solidity",
+          "<",
+          "0.6",
+          ".0"
+        ],
+        "nodeType": "PragmaDirective",
+        "src": "0:23:3"
+      },
+      {
+        "absolutePath": "/home/greg/code/github.com/ChainSafe/truffle-plugin-abigen/example/contracts/Abstracts/TestContractInterface.sol",
+        "file": "./Abstracts/TestContractInterface.sol",
+        "id": 126,
+        "nodeType": "ImportDirective",
+        "scope": 135,
+        "sourceUnit": 66,
+        "src": "25:47:3",
+        "symbolAliases": [],
+        "unitAlias": ""
+      },
+      {
+        "baseContracts": [
+          {
+            "arguments": null,
+            "baseName": {
+              "contractScope": null,
+              "id": 127,
+              "name": "TestContractInterface",
+              "nodeType": "UserDefinedTypeName",
+              "referencedDeclaration": 65,
+              "src": "226:21:3",
+              "typeDescriptions": {
+                "typeIdentifier": "t_contract$_TestContractInterface_$65",
+                "typeString": "contract TestContractInterface"
+              }
+            },
+            "id": 128,
+            "nodeType": "InheritanceSpecifier",
+            "src": "226:21:3"
+          }
+        ],
+        "contractDependencies": [
+          65
+        ],
+        "contractKind": "contract",
+        "documentation": null,
+        "fullyImplemented": true,
+        "id": 134,
+        "linearizedBaseContracts": [
+          134,
+          65
+        ],
+        "name": "Arithmetic",
+        "nodeType": "ContractDefinition",
+        "nodes": [
+          {
+            "body": {
+              "id": 132,
+              "nodeType": "Block",
+              "src": "283:599:3",
+              "statements": [
+                {
+                  "externalReferences": [],
+                  "id": 131,
+                  "nodeType": "InlineAssembly",
+                  "operations": "{\n    pop(add(2, 3))\n    pop(sub(3, 1))\n    pop(mul(2, 2))\n    pop(div(4, 2))\n    pop(sdiv(4, 2))\n    pop(mod(3, 2))\n    pop(smod(3, 2))\n    pop(exp(2, 3))\n    pop(addmod(5, 3, 4))\n    pop(mulmod(3, 2, 4))\n}",
+                  "src": "290:587:3"
+                }
+              ]
+            },
+            "documentation": null,
+            "id": 133,
+            "implemented": true,
+            "kind": "function",
+            "modifiers": [],
+            "name": "testOpcodes",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 129,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "273:2:3"
+            },
+            "returnParameters": {
+              "id": 130,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "283:0:3"
+            },
+            "scope": 134,
+            "src": "253:629:3",
+            "stateMutability": "nonpayable",
+            "superFunction": 49,
+            "visibility": "public"
+          }
+        ],
+        "scope": 135,
+        "src": "203:682:3"
+      }
+    ],
+    "src": "0:887:3"
+  },
+  "legacyAST": {
+    "absolutePath": "/home/greg/code/github.com/ChainSafe/truffle-plugin-abigen/example/contracts/arithmetic.sol",
+    "exportedSymbols": {
+      "Arithmetic": [
+        134
+      ]
+    },
+    "id": 135,
+    "nodeType": "SourceUnit",
+    "nodes": [
+      {
+        "id": 125,
+        "literals": [
+          "solidity",
+          "<",
+          "0.6",
+          ".0"
+        ],
+        "nodeType": "PragmaDirective",
+        "src": "0:23:3"
+      },
+      {
+        "absolutePath": "/home/greg/code/github.com/ChainSafe/truffle-plugin-abigen/example/contracts/Abstracts/TestContractInterface.sol",
+        "file": "./Abstracts/TestContractInterface.sol",
+        "id": 126,
+        "nodeType": "ImportDirective",
+        "scope": 135,
+        "sourceUnit": 66,
+        "src": "25:47:3",
+        "symbolAliases": [],
+        "unitAlias": ""
+      },
+      {
+        "baseContracts": [
+          {
+            "arguments": null,
+            "baseName": {
+              "contractScope": null,
+              "id": 127,
+              "name": "TestContractInterface",
+              "nodeType": "UserDefinedTypeName",
+              "referencedDeclaration": 65,
+              "src": "226:21:3",
+              "typeDescriptions": {
+                "typeIdentifier": "t_contract$_TestContractInterface_$65",
+                "typeString": "contract TestContractInterface"
+              }
+            },
+            "id": 128,
+            "nodeType": "InheritanceSpecifier",
+            "src": "226:21:3"
+          }
+        ],
+        "contractDependencies": [
+          65
+        ],
+        "contractKind": "contract",
+        "documentation": null,
+        "fullyImplemented": true,
+        "id": 134,
+        "linearizedBaseContracts": [
+          134,
+          65
+        ],
+        "name": "Arithmetic",
+        "nodeType": "ContractDefinition",
+        "nodes": [
+          {
+            "body": {
+              "id": 132,
+              "nodeType": "Block",
+              "src": "283:599:3",
+              "statements": [
+                {
+                  "externalReferences": [],
+                  "id": 131,
+                  "nodeType": "InlineAssembly",
+                  "operations": "{\n    pop(add(2, 3))\n    pop(sub(3, 1))\n    pop(mul(2, 2))\n    pop(div(4, 2))\n    pop(sdiv(4, 2))\n    pop(mod(3, 2))\n    pop(smod(3, 2))\n    pop(exp(2, 3))\n    pop(addmod(5, 3, 4))\n    pop(mulmod(3, 2, 4))\n}",
+                  "src": "290:587:3"
+                }
+              ]
+            },
+            "documentation": null,
+            "id": 133,
+            "implemented": true,
+            "kind": "function",
+            "modifiers": [],
+            "name": "testOpcodes",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 129,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "273:2:3"
+            },
+            "returnParameters": {
+              "id": 130,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "283:0:3"
+            },
+            "scope": 134,
+            "src": "253:629:3",
+            "stateMutability": "nonpayable",
+            "superFunction": 49,
+            "visibility": "public"
+          }
+        ],
+        "scope": 135,
+        "src": "203:682:3"
+      }
+    ],
+    "src": "0:887:3"
+  },
+  "compiler": {
+    "name": "solc",
+    "version": "0.5.16+commit.9c3226ce.Emscripten.clang"
+  },
+  "networks": {},
+  "schemaVersion": "3.0.23",
+  "updatedAt": "2020-09-27T17:19:46.969Z",
+  "devdoc": {
+    "methods": {}
+  },
+  "userdoc": {
+    "methods": {}
+  }
+}

@@ -1,6 +1,6 @@
 {
   "name": "@chainsafe/truffle-plugin-abigen",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "Truffle plugin to post-process contracts for go-ethereum's abigen",
   "main": "index.js",
   "scripts": {
@@ -18,6 +18,7 @@
   "homepage": "https://github.com/ChainSafe/truffle-plugin-abigen#readme",
   "dependencies": {
     "cli-logger": "^0.5.40",
-    "eslint": "^6.8.0"
+    "eslint": "^6.8.0",
+    "truffle": "^5.1.46"
   }
 }
