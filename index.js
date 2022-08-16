@@ -1,22 +1,20 @@
 const cliLogger = require('cli-logger')
 const fs = require('fs')
-const { enforceOrThrow } = require('./util')
+const {enforceOrThrow} = require('./util')
 
-const logger = cliLogger({ level: 'info' })
+const logger = cliLogger({level: 'info'})
 
-// Contstants
-const BUILD_PATH = "./abigenBindings/";
-const ABI_PATH = BUILD_PATH + "abi/"
-const BIN_PATH = BUILD_PATH + "bin/"
+// Globals
+let BUILD_PATH, ABI_PATH, BIN_PATH;
 
 module.exports = async (config) => {
     const options = parseConfig(config)
-    createDirectories(options);   
+    createDirectories(options);
     // Set debug logging
     if (config.debug) logger.level('debug')
     logger.debug('DEBUG logging is turned ON')
-    
-    let contracts= [];
+
+    let contracts = [];
     if (options.contracts.length === 0) {
         contracts = await getAllArtifacts(options);
     } else {
@@ -27,15 +25,15 @@ module.exports = async (config) => {
             importedContracts.forEach(x => contracts.push(x));
         }
     }
-    contracts.forEach(contract => writeAbigen(contract.contractName, contract.abi, contract.bytecode));
+    contracts.forEach(contract => writeAbigen(contract.contractName, contract.abi, contract.bytecode, options));
 }
 
 const parseImports = (options, blob) => {
     split = blob.source.split(";")
     let imports = [];
     split.forEach(line => {
-        if(line.indexOf("import") > -1) {
-            let path = line.split("import")[1].replace(/['"]+/g, '').replace(" ","");
+        if (line.indexOf("import") > -1) {
+            let path = line.split("import")[1].replace(/['"]+/g, '').replace(" ", "");
             let split = path.split("/");
             let name = split[split.length - 1].replace(".sol", "");
             imports.push(getArtifact(name, options));
@@ -55,11 +53,17 @@ const parseConfig = (config) => {
 
     const workingDir = config.working_directory
     const contractsBuildDir = config.contracts_build_directory
+    const exportDir = typeof config.abigen?.exportFolder == "string" ? config.abigen.exportFolder : "./abigenBindings/"
+    const extension = typeof config.abigen?.extensionAbi == "string" ? config.abigen.extensionAbi : ".abi"
+    const bingen = typeof config.abigen?.generateBin == "boolean" ? config.abigen.generateBin : true
 
     return {
         workingDir,
         contractsBuildDir,
-        contracts
+        contracts,
+        exportDir,
+        extension,
+        bingen
     }
 }
 
@@ -87,19 +91,22 @@ const getAllArtifacts = async (options) => {
     return content;
 }
 
-const createDirectories = () => {
+const createDirectories = (options) => {
+    BUILD_PATH = options.exportDir;
+    ABI_PATH = BUILD_PATH + "abi/";
+    BIN_PATH = BUILD_PATH + "bin/";
     try {
-        fs.rmdirSync(BUILD_PATH, { recursive: true });
+        fs.rmdirSync(BUILD_PATH, {recursive: true});
         fs.mkdirSync(BUILD_PATH);
         fs.mkdirSync(ABI_PATH);
-        fs.mkdirSync(BIN_PATH);
+        options.bingen && fs.mkdirSync(BIN_PATH);
     } catch (e) {
         logger.error(e)
     }
 }
 
-const writeAbigen = (contractName, abi, bytecode) => {
+const writeAbigen = (contractName, abi, bytecode, options) => {
     bytecode = bytecode.substring(2);
-    fs.writeFileSync(ABI_PATH + contractName + ".abi", JSON.stringify(abi))
-    fs.writeFileSync(BIN_PATH + contractName + ".bin", bytecode)
+    fs.writeFileSync(ABI_PATH + contractName + options.extension, JSON.stringify(abi))
+    options.bingen && fs.writeFileSync(BIN_PATH + contractName + ".bin", bytecode)
 }

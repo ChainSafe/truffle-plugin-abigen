@@ -6,6 +6,8 @@ This truffle plugin generates the required files needed to use Geths [abigen](ht
 1. Install the plugin with npm
     ```sh
     npm install @chainsafe/truffle-plugin-abigen
+    // or
+    yarn add @chainsafe/truffle-plugin-abigen
     ```
 2. Add the plugin to your `truffle.js` or `truffle-config.js` file
     ```js
@@ -15,6 +17,18 @@ This truffle plugin generates the required files needed to use Geths [abigen](ht
       plugins: [
         "@chainsafe/truffle-plugin-abigen"
       ]
+    }
+    ```
+3. Optional configuration in your `truffle.js` or `truffle-config.js` file
+   ```js
+    module.exports = {
+      /* ... rest of truffle-config */
+
+      abigen: {
+        exportFolder: './abiExported/',
+        extensionAbi: '.json',
+        generateBin: false
+      }
     }
     ```
 
