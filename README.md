@@ -27,7 +27,8 @@ This truffle plugin generates the required files needed to use Geths [abigen](ht
       abigen: {
         exportFolder: './abiExported/',
         extensionAbi: '.json',
-        generateBin: false
+        generateBin: false,
+        exportConsole: true
       }
     }
     ```

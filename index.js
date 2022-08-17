@@ -56,6 +56,7 @@ const parseConfig = (config) => {
     const exportDir = typeof config.abigen?.exportFolder == "string" ? config.abigen.exportFolder : "./abigenBindings/"
     const extension = typeof config.abigen?.extensionAbi == "string" ? config.abigen.extensionAbi : ".abi"
     const bingen = typeof config.abigen?.generateBin == "boolean" ? config.abigen.generateBin : true
+    const exportConsole = typeof config.abigen?.exportConsole == "boolean" ? config.abigen.exportConsole : false
 
     return {
         workingDir,
@@ -63,7 +64,8 @@ const parseConfig = (config) => {
         contracts,
         exportDir,
         extension,
-        bingen
+        bingen,
+        exportConsole
     }
 }
 
@@ -79,11 +81,9 @@ const getArtifact = (contractName, options) => {
 const getAllArtifacts = async (options) => {
     let files = fs.readdirSync("./build/contracts");
     const content = [];
-    logger.info("here")
     files.forEach(file => {
         const contractName = file.split(".")[0];
         const artifact = getArtifact(contractName, options);
-        logger.info(artifact)
         if (artifact.abi.length !== 0) {
             content.push(artifact);
         }
@@ -96,9 +96,9 @@ const createDirectories = (options) => {
     ABI_PATH = BUILD_PATH + "abi/";
     BIN_PATH = BUILD_PATH + "bin/";
     try {
-        fs.rmdirSync(BUILD_PATH, {recursive: true});
-        fs.mkdirSync(BUILD_PATH);
-        fs.mkdirSync(ABI_PATH);
+        fs.existsSync(BUILD_PATH) && fs.rmdirSync(BUILD_PATH, {recursive: true});
+        !fs.existsSync(BUILD_PATH) && fs.mkdirSync(BUILD_PATH, {recursive: true});
+        !fs.existsSync(ABI_PATH) && fs.mkdirSync(ABI_PATH);
         options.bingen && fs.mkdirSync(BIN_PATH);
     } catch (e) {
         logger.error(e)
@@ -109,4 +109,5 @@ const writeAbigen = (contractName, abi, bytecode, options) => {
     bytecode = bytecode.substring(2);
     fs.writeFileSync(ABI_PATH + contractName + options.extension, JSON.stringify(abi))
     options.bingen && fs.writeFileSync(BIN_PATH + contractName + ".bin", bytecode)
+    options.exportConsole && logger.info(abi);
 }
