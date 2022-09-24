@@ -79,7 +79,7 @@ const getArtifact = (contractName, options) => {
 }
 
 const getAllArtifacts = async (options) => {
-    let files = fs.readdirSync("./build/contracts");
+    let files = fs.readdirSync(options.contractsBuildDir);
     const content = [];
     files.forEach(file => {
         const contractName = file.split(".")[0];
