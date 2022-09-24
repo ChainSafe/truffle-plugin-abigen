@@ -1,6 +1,6 @@
 {
   "name": "@darienmh/truffle-plugin-abigen",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "Truffle plugin to post-process contracts for go-ethereum's abigen",
   "main": "index.js",
   "scripts": {
