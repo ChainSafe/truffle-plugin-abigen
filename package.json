@@ -1,6 +1,6 @@
 {
-  "name": "@chainsafe/truffle-plugin-abigen",
-  "version": "0.0.2",
+  "name": "@darienmh/truffle-plugin-abigen",
+  "version": "1.0.0",
   "description": "Truffle plugin to post-process contracts for go-ethereum's abigen",
   "main": "index.js",
   "scripts": {
@@ -8,17 +8,28 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/ChainSafe/truffle-plugin-abigen.git"
+    "url": "git+https://github.com/darienmh/truffle-plugin-abigen.git"
   },
-  "author": "ChainSafe Systems",
+  "author": "ChainSafe Systems, Darien Macias",
   "license": "Apache-2.0",
   "bugs": {
-    "url": "https://github.com/ChainSafe/truffle-plugin-abigen/issues"
+    "url": "https://github.com/darienmh/truffle-plugin-abigen/issues"
   },
-  "homepage": "https://github.com/ChainSafe/truffle-plugin-abigen#readme",
+  "homepage": "https://github.com/darienmh/truffle-plugin-abigen#readme",
   "dependencies": {
     "cli-logger": "^0.5.40",
-    "eslint": "^6.8.0",
-    "truffle": "^5.1.46"
+    "truffle": "^5.11.5"
+  },
+  "keywords": [
+    "truffle",
+    "abi",
+    "generate"
+  ],
+  "devDependencies": {
+    "eslint": "^8.54.0",
+    "eslint-config-standard": "^17.1.0",
+    "eslint-plugin-import": "^2.29.0",
+    "eslint-plugin-n": "^16.3.1",
+    "eslint-plugin-promise": "^6.1.1"
   }
 }

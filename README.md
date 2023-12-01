@@ -1,11 +1,13 @@
 # truffle-plugin-abigen
 
-This truffle plugin generates the required files needed to use Geths [abigen](https://github.com/ethereum/go-ethereum/wiki/Native-DApps:-Go-bindings-to-Ethereum-contracts) to generate contract bindings in golang.
+This truffle plugin generates the required files needed to use Geths [abigen](https://geth.ethereum.org/docs/dapp/native-bindings) to generate contract bindings in golang.
 
 ## Installation
 1. Install the plugin with npm
     ```sh
-    npm install @chainsafe/truffle-plugin-abigen
+    npm install @darienmh/truffle-plugin-abigen
+    // or
+    yarn add @darienmh/truffle-plugin-abigen
     ```
 2. Add the plugin to your `truffle.js` or `truffle-config.js` file
     ```js
@@ -13,8 +15,21 @@ This truffle plugin generates the required files needed to use Geths [abigen](ht
       /* ... rest of truffle-config */
 
       plugins: [
-        "@chainsafe/truffle-plugin-abigen"
+        "@darienmh/truffle-plugin-abigen"
       ]
+    }
+    ```
+3. Optional configuration in your `truffle.js` or `truffle-config.js` file
+   ```js
+    module.exports = {
+      /* ... rest of truffle-config */
+
+      abigen: {
+        exportFolder: './abiExported/',
+        extensionAbi: '.json',
+        generateBin: false,
+        exportConsole: true
+      }
     }
     ```
 
@@ -30,6 +45,21 @@ truffle run abigen SomeContractName AnotherContractName
 Alternatively, to generate bindings for all your contracts:
 ```sh
 truffle run abigen
+```
+You can also configure the `package.json` file to generate abi for all your contracts on compile:
+```json
+{
+   /* ... rest of package.json */
+   "scripts": {
+      /* ... rest of package.json */
+      "compile": "truffle compile --all && truffle run abigen"
+   }
+}
+```
+```bash
+npm run compile
+# or
+yarn compile
 ```
 
 ### Debugging

@@ -1,7 +1,7 @@
-    module.exports = {
-      /* ... rest of truffle-config */
+module.exports = {
+  /* ... rest of truffle-config */
 
-      plugins: [
-        "@chainsafe/truffle-plugin-abigen"
-      ]
-    }
+  plugins: [
+    '@chainsafe/truffle-plugin-abigen'
+  ]
+}
